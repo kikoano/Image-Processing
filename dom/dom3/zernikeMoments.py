@@ -10,7 +10,7 @@ from segment import segment
 srcPath = ["database/", "query/"]
 index = {}
 
-def zernike_moments(img):
+def zernikeMoments(img):
     # Segment
     seg = segment(img)
     outline = np.zeros(img.shape, dtype="uint8")
@@ -24,7 +24,7 @@ def zernike_moments(img):
 for path in srcPath:
     for imagePath in glob.glob(path + "*jpg"):
         img = cv2.imread(imagePath, 0)
-        res = zernike_moments(img)
+        res = zernikeMoments(img)
         index[imagePath] = res
 
 # Save to text
